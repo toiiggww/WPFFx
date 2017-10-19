@@ -1,0 +1,212 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C8D967A-FF1B-4F1D-95E9-9203D6D04783}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SLTransitionEffects</RootNamespace>
+    <AssemblyName>SLTransitionEffects</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>"%24/HLSLMeetsXaml.root/HLSLMeetsXaml", POAAAAAA</SccProjectName>
+    <SccLocalPath>..\..</SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\BandedSwirlTransitionEffect.cs">
+      <Link>EffectFiles\BandedSwirlTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\BlindsTransitionEffect.cs">
+      <Link>EffectFiles\BlindsTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\BloodTransitionEffect.cs">
+      <Link>EffectFiles\BloodTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\CircleRevealTransitionEffect.cs">
+      <Link>EffectFiles\CircleRevealTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\CircleStretchTransitionEffect.cs">
+      <Link>EffectFiles\CircleStretchTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\CircularBlurTransitionEffect.cs">
+      <Link>EffectFiles\CircularBlurTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\CloudRevealTransitionEffect.cs">
+      <Link>EffectFiles\CloudRevealTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\CloudyTransitionEffect.cs">
+      <Link>EffectFiles\CloudyTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\CrumbleTransitionEffect.cs">
+      <Link>EffectFiles\CrumbleTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\DisolveTransitionEffect.cs">
+      <Link>EffectFiles\DisolveTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\DropFadeTransitionEffect.cs">
+      <Link>EffectFiles\DropFadeTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\FadeTransitionEffect.cs">
+      <Link>EffectFiles\FadeTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\LeastBrightTransitionEffect.cs">
+      <Link>EffectFiles\LeastBrightTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\LineRevealTransitionEffect.cs">
+      <Link>EffectFiles\LineRevealTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\MostBrightTransitionEffect.cs">
+      <Link>EffectFiles\MostBrightTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\PixelateInTransitionEffect.cs">
+      <Link>EffectFiles\PixelateInTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\PixelateOutTransitionEffect.cs">
+      <Link>EffectFiles\PixelateOutTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\PixelateTransitionEffect.cs">
+      <Link>EffectFiles\PixelateTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\RadialBlurTransitionEffect.cs">
+      <Link>EffectFiles\RadialBlurTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\RadialWiggleTransitionEffect.cs">
+      <Link>EffectFiles\RadialWiggleTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\RandomCircleRevealTransitionEffect.cs">
+      <Link>EffectFiles\RandomCircleRevealTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\RandomizedTransitionEffect.cs">
+      <Link>EffectFiles\RandomizedTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\RippleTransitionEffect.cs">
+      <Link>EffectFiles\RippleTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\RotateCrumbleTransitionEffect.cs">
+      <Link>EffectFiles\RotateCrumbleTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\SaturateTransitionEffect.cs">
+      <Link>EffectFiles\SaturateTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\ShrinkTransitionEffect.cs">
+      <Link>EffectFiles\ShrinkTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\SlideInTransitionEffect.cs">
+      <Link>EffectFiles\SlideInTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\SmoothSwirlGridTransitionEffect.cs">
+      <Link>EffectFiles\SmoothSwirlGridTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\SwirlGridTransitionEffect.cs">
+      <Link>EffectFiles\SwirlGridTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\SwirlTransitionEffect.cs">
+      <Link>EffectFiles\SwirlTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\TransitionEffect.cs">
+      <Link>EffectFiles\TransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\WaterTransitionEffect.cs">
+      <Link>EffectFiles\WaterTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectFiles\WaveTransitionEffect.cs">
+      <Link>EffectFiles\WaveTransitionEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\TransitionEffects\EffectLibrary.cs">
+      <Link>EffectLibrary.cs</Link>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SLWorkarounds.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ShaderSource\BandedSwirlTransitionEffect.ps" />
+    <Resource Include="ShaderSource\BlindsTransitionEffect.ps" />
+    <Resource Include="ShaderSource\BloodTransitionEffect.ps" />
+    <Resource Include="ShaderSource\CircleRevealTransitionEffect.ps" />
+    <Resource Include="ShaderSource\CircleStretchTransitionEffect.ps" />
+    <Resource Include="ShaderSource\CircularBlurTransitionEffect.ps" />
+    <Resource Include="ShaderSource\CloudRevealTransitionEffect.ps" />
+    <Resource Include="ShaderSource\CrumbleTransitionEffect.ps" />
+    <Resource Include="ShaderSource\DisolveTransitionEffect.ps" />
+    <Resource Include="ShaderSource\DropFadeTransitionEffect.ps" />
+    <Resource Include="ShaderSource\FadeTransitionEffect.ps" />
+    <Resource Include="ShaderSource\LeastBrightTransitionEffect.ps" />
+    <Resource Include="ShaderSource\LineRevealTransitionEffect.ps" />
+    <Resource Include="ShaderSource\MostBrightTransitionEffect.ps" />
+    <Resource Include="ShaderSource\PixelateInTransitionEffect.ps" />
+    <Resource Include="ShaderSource\PixelateOutTransitionEffect.ps" />
+    <Resource Include="ShaderSource\PixelateTransitionEffect.ps" />
+    <Resource Include="ShaderSource\RadialBlurTransitionEffect.ps" />
+    <Resource Include="ShaderSource\RadialWiggleTransitionEffect.ps" />
+    <Resource Include="ShaderSource\RandomCircleRevealTransitionEffect.ps" />
+    <Resource Include="ShaderSource\RippleTransitionEffect.ps" />
+    <Resource Include="ShaderSource\RotateCrumbleTransitionEffect.ps" />
+    <Resource Include="ShaderSource\SaturateTransitionEffect.ps" />
+    <Resource Include="ShaderSource\ShrinkTransitionEffect.ps" />
+    <Resource Include="ShaderSource\SlideInTransitionEffect.ps" />
+    <Resource Include="ShaderSource\SmoothSwirlGridTransitionEffect.ps" />
+    <Resource Include="ShaderSource\SwirlGridTransitionEffect.ps" />
+    <Resource Include="ShaderSource\SwirlTransitionEffect.ps" />
+    <Resource Include="ShaderSource\WaterTransitionEffect.ps" />
+    <Resource Include="ShaderSource\WaveTransitionEffect.ps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\clouds.png" />
+    <Resource Include="Images\noise.png" />
+    <Resource Include="Images\sincosatan.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight\v3.0\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

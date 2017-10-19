@@ -1,0 +1,169 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C9A87706-BDD5-4596-9B4D-59EEA4BA6407}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SLShaderEffectLibrary</RootNamespace>
+    <AssemblyName>SLShaderEffectLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>"%24/HLSLMeetsXaml.root/HLSLMeetsXaml", POAAAAAA</SccProjectName>
+    <SccLocalPath>..\..</SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\BandedSwirlEffect.cs">
+      <Link>EffectFiles\BandedSwirlEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\BloomEffect.cs">
+      <Link>EffectFiles\BloomEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\BrightExtractEffect.cs">
+      <Link>EffectFiles\BrightExtractEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\ColorKeyAlphaEffect.cs">
+      <Link>EffectFiles\ColorKeyAlphaEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\ColorToneEffect.cs">
+      <Link>EffectFiles\ColorToneEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\ContrastAdjustEffect.cs">
+      <Link>EffectFiles\ContrastAdjustEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\DirectionalBlurEffect.cs">
+      <Link>EffectFiles\DirectionalBlurEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\EmbossedEffect.cs">
+      <Link>EffectFiles\EmbossedEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\GloomEffect.cs">
+      <Link>EffectFiles\GloomEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\GrowablePoissonDiskEffect.cs">
+      <Link>EffectFiles\GrowablePoissonDiskEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\InvertColorEffect.cs">
+      <Link>EffectFiles\InvertColorEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\LightStreakEffect.cs">
+      <Link>EffectFiles\LightStreakEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\MagnifyEffect.cs">
+      <Link>EffectFiles\MagnifyEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\MonochromeEffect.cs">
+      <Link>EffectFiles\MonochromeEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\PinchEffect.cs">
+      <Link>EffectFiles\PinchEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\PixelateEffect.cs">
+      <Link>EffectFiles\PixelateEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\RippleEffect.cs">
+      <Link>EffectFiles\RippleEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\SharpenEffect.cs">
+      <Link>EffectFiles\SharpenEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\SmoothMagnifyEffect.cs">
+      <Link>EffectFiles\SmoothMagnifyEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\SwirlEffect.cs">
+      <Link>EffectFiles\SwirlEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\ToneMappingEffect.cs">
+      <Link>EffectFiles\ToneMappingEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\ToonShaderEffect.cs">
+      <Link>EffectFiles\ToonShaderEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectFiles\ZoomBlurEffect.cs">
+      <Link>EffectFiles\ZoomBlurEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\WPF\ShaderEffectLibrary\EffectLibrary.cs">
+      <Link>EffectLibrary.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SLWorkarounds.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ShaderSource\BandedSwirl.ps" />
+    <Resource Include="ShaderSource\Bloom.ps" />
+    <Resource Include="ShaderSource\BrightExtract.ps" />
+    <Resource Include="ShaderSource\ColorKeyAlpha.ps" />
+    <Resource Include="ShaderSource\ColorTone.ps" />
+    <Resource Include="ShaderSource\ContrastAdjust.ps" />
+    <Resource Include="ShaderSource\DirectionalBlur.ps" />
+    <Resource Include="ShaderSource\Embossed.ps" />
+    <Resource Include="ShaderSource\Gloom.ps" />
+    <Resource Include="ShaderSource\GrowablePoissonDisk.ps" />
+    <Resource Include="ShaderSource\InvertColor.ps" />
+    <Resource Include="ShaderSource\LightStreak.ps" />
+    <Resource Include="ShaderSource\Magnify.ps" />
+    <Resource Include="ShaderSource\Monochrome.ps" />
+    <Resource Include="ShaderSource\Pinch.ps" />
+    <Resource Include="ShaderSource\Pixelate.ps" />
+    <Resource Include="ShaderSource\Ripple.ps" />
+    <Resource Include="ShaderSource\Sharpen.ps" />
+    <Resource Include="ShaderSource\SmoothMagnify.ps" />
+    <Resource Include="ShaderSource\Swirl.ps" />
+    <Resource Include="ShaderSource\ToneMapping.ps" />
+    <Resource Include="ShaderSource\ToonShader.ps" />
+    <Resource Include="ShaderSource\ZoomBlur.ps" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight\v3.0\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

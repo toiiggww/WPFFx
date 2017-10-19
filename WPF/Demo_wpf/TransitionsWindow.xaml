@@ -1,0 +1,10 @@
+﻿<Window x:Class="ExtensibleDemoApp.TransitionsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Transition Effects" Height="680" Width="800" Background="{DynamicResource BackgroundBrush}">
+    <Canvas>
+		<Image x:Name="oldChild" Width="800" Height="600" Stretch="UniformToFill" Opacity="1"  />		 
+		<Image x:Name="currentChild" Width="800" Height="600" Stretch="UniformToFill"/>				
+		<TextBlock Text="" Canvas.Left="350" Canvas.Top="610" x:Name="effectName"/> 
+	</Canvas>
+</Window>

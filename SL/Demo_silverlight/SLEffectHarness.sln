@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLEffectHarness", "SLEffectHarness\SLEffectHarness.csproj", "{D8AEA392-A238-4483-8BA1-D2777824E14F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLEffectHarness.Web", "SLEffectHarness.Web\SLEffectHarness.Web.csproj", "{07586428-4E14-4E01-901D-AC48436346AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLShaderEffectLibrary", "..\NetEffects\ShaderEffectLibrary\ShaderDemoApp\SLShaderEffectLibrary\SLShaderEffectLibrary.csproj", "{C9A87706-BDD5-4596-9B4D-59EEA4BA6407}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLTransitionEffects", "..\NetEffects\ShaderEffectLibrary\ShaderDemoApp\SLTransitionEffects\SLTransitionEffects.csproj", "{0C8D967A-FF1B-4F1D-95E9-9203D6D04783}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8AEA392-A238-4483-8BA1-D2777824E14F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8AEA392-A238-4483-8BA1-D2777824E14F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8AEA392-A238-4483-8BA1-D2777824E14F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8AEA392-A238-4483-8BA1-D2777824E14F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07586428-4E14-4E01-901D-AC48436346AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07586428-4E14-4E01-901D-AC48436346AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07586428-4E14-4E01-901D-AC48436346AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07586428-4E14-4E01-901D-AC48436346AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A87706-BDD5-4596-9B4D-59EEA4BA6407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A87706-BDD5-4596-9B4D-59EEA4BA6407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A87706-BDD5-4596-9B4D-59EEA4BA6407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A87706-BDD5-4596-9B4D-59EEA4BA6407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C8D967A-FF1B-4F1D-95E9-9203D6D04783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C8D967A-FF1B-4F1D-95E9-9203D6D04783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C8D967A-FF1B-4F1D-95E9-9203D6D04783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C8D967A-FF1B-4F1D-95E9-9203D6D04783}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

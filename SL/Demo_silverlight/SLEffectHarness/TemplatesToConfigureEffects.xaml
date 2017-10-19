@@ -1,0 +1,781 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"	
+	xmlns:shaderlib="clr-namespace:ShaderEffectLibrary;assembly=ShaderEffectLibrary"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	>
+	
+	 
+	<sys:Double x:Key="TextBlockWidth">80</sys:Double>
+
+	<GridLength x:Key="marginLeft">10</GridLength>	
+	<GridLength x:Key="propertyWidth">100</GridLength>
+	<GridLength x:Key="valueWidth">50</GridLength>
+	<GridLength x:Key="valueSliderWidth">100</GridLength>
+
+
+	<!--<sys:Double x:Key="marginLeft">20</sys:Double>	
+	<sys:Double x:Key="propertyWidth">100</sys:Double>
+	<sys:Double x:Key="valueWidth">50</sys:Double>
+	<sys:Double x:Key="valueSliderWidth">100</sys:Double>-->
+
+
+  <DataTemplate x:Key="BandedSwirlEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions> 
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />				
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				 
+			</Grid.RowDefinitions>
+			
+			<TextBlock Text="Strength:" Grid.Column="1"/>								
+			<TextBlock Text="{Binding ElementName=swirlSlider, Path=Value}" Width="{StaticResource TextBlockWidth}" Grid.Column="2"/>
+			<Slider Name="swirlSlider"
+                Minimum="-10"
+                Maximum="10"
+                Value="{Binding SwirlStrength, Mode=TwoWay}"
+                SmallChange="0.1"
+                Grid.Row="0"
+                Grid.Column="3"                
+                />			
+
+			<TextBlock Text="Center" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"/>
+			<TextBox Text="{Binding Center, Mode=TwoWay}" Grid.Row="1" Width="{StaticResource TextBlockWidth}" Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left"/>
+
+			<TextBlock Text="Dist threshold:" Grid.Column="1" Grid.Row="2"/>
+			<TextBlock Text="{Binding ElementName=threshold, Path=Value}" Width="{StaticResource TextBlockWidth}" Grid.Row="2" Grid.Column="2"/>
+			<Slider Name="threshold"
+                Minimum="0"
+                Maximum="1"
+                Value="{Binding DistanceThreshold, Mode=TwoWay}"
+                SmallChange="0.1"
+                Grid.Row="2"
+                Grid.Column="3"
+                
+                />
+                
+		</Grid>
+	</DataTemplate>
+
+
+
+	
+	                                   
+                                        
+	<DataTemplate x:Key="BloomEffect">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<TextBlock Text="Bloom Intensity:" Grid.Column="1" Grid.Row="0"/>
+			<TextBlock Text="{Binding ElementName=bloomIntSlider, Path=Value}" Grid.Column="2" Grid.Row="0" />
+			<Slider Name="bloomIntSlider"
+                Value="{Binding BloomIntensity, Mode=TwoWay}"
+                Minimum="0"
+                Maximum="10"
+                SmallChange="0.1"
+                
+                
+                Grid.Row="0"
+                Grid.Column="3"/>
+			
+			<TextBlock Text="Base Intensity:" Grid.Column="1" Grid.Row="1"/>
+			<TextBlock Text="{Binding ElementName=baseIntSlider, Path=Value}" Grid.Column="2" Grid.Row="1" />
+			<Slider Name="baseIntSlider"
+                Value="{Binding BaseIntensity, Mode=TwoWay}"
+                Minimum="0"
+                Maximum="10"
+                SmallChange="0.1"                                
+                Grid.Row="1"
+                Grid.Column="3"/>
+			<TextBlock Text="Bloom Saturation:" Grid.Column="1" Grid.Row="2"/>
+			<TextBlock Text="{Binding ElementName=bloomSatSlider, Path=Value}" Grid.Column="2" Grid.Row="2" />
+			<Slider Name="bloomSatSlider"
+                Value="{Binding BloomSaturation, Mode=TwoWay}"
+                Minimum="0"
+                Maximum="10"
+                SmallChange="0.1"                
+                Grid.Row="2"
+                Grid.Column="3"/>
+                
+			<TextBlock Text="Base Saturation:" Grid.Column="1" Grid.Row="3"/>
+			<TextBlock Text="{Binding ElementName=baseSatSlider, Path=Value}" Grid.Column="2" Grid.Row="3" />
+			<Slider Name="baseSatSlider"
+                Value="{Binding BaseSaturation, Mode=TwoWay}"
+                Minimum="0"
+                Maximum="10"
+                SmallChange="0.1"                               
+                Grid.Row="3"
+                Grid.Column="3"/>
+		</Grid>
+	</DataTemplate>
+	
+	<DataTemplate x:Key="BrightExtractEffect">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions> 
+				<RowDefinition Height="Auto"> </RowDefinition>
+			</Grid.RowDefinitions>
+			
+			<TextBlock Text="" Grid.Row="0" Grid.Column="1"> </TextBlock>
+			<TextBlock Text="{Binding ElementName=threshold, Path=Value}" Grid.Column="2" /> 
+			<Slider x:Name="threshold" Value="{Binding Threshold, Mode=TwoWay}" Minimum="0" Maximum="1" SmallChange=".1"  Grid.Column="3"/> 
+		</Grid> 	
+	</DataTemplate>
+
+
+	<DataTemplate x:Key="ColorKeyAlphaEffect" >
+		<Grid> 
+			<TextBlock Text="No parameters"></TextBlock>
+		</Grid> 
+	</DataTemplate>
+
+	<DataTemplate x:Key="ColorToneEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<TextBlock Text="Desaturation:" Grid.Column="1" Grid.Row="0"/>
+			<TextBlock Text="{Binding ElementName=desatSlider, Path=Value}" Grid.Column="2" Grid.Row="0" />
+			<Slider Name="desatSlider"
+                Minimum="0"
+                Maximum="10"
+                Value="{Binding Desaturation, Mode=TwoWay}"  SmallChange="0.3"                
+                Grid.Row="0"
+                Grid.Column="3"/>
+
+			<TextBlock Text="Tone:" Grid.Column="1" Grid.Row="1"/>
+			<TextBlock Text="{Binding ElementName=toneSlider, Path=Value}" Grid.Column="2" Grid.Row="1" />
+			<Slider Name="toneSlider"
+                Minimum="0"
+                Maximum="10"
+                Value="{Binding Toned, Mode=TwoWay}"
+                SmallChange="0.3"               
+                Grid.Row="1"
+                Grid.Column="3"/>
+                
+            <TextBlock Text="Light Color" Grid.Column="1" Grid.Row="2" />
+            <TextBox Text="{Binding LightColor}" Grid.Column="3" Grid.Row="2" />
+
+			<TextBlock Text="Dark Color" Grid.Column="1" Grid.Row="3" />
+			<TextBox Text="{Binding DarkColor}" Grid.Column="3" Grid.Row="3" />
+			
+		</Grid>
+	</DataTemplate>
+
+	<DataTemplate x:Key="ContrastAdjustEffect"> 
+		<Grid> 
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			
+			<Grid.RowDefinitions> 
+				<RowDefinition> </RowDefinition>
+				<RowDefinition></RowDefinition>
+				 
+			</Grid.RowDefinitions>
+			
+			<TextBlock Text="Brightness" Grid.Row="0" Grid.Column="1"> </TextBlock>
+			<TextBlock Text="{Binding ElementName=brightness,Path=Value}" Grid.Column="2" Grid.Row="0" />
+			<Slider x:Name="brightness" Value="{Binding Brightness, Mode=TwoWay}" Minimum="0" Maximum="1" Grid.Row="0" Grid.Column="3"/>
+			
+			<TextBlock Text="Contrast" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=contrast,Path=Value}" Grid.Column="2" Grid.Row="1" />
+			<Slider x:Name="contrast" Value="{Binding Contrast, Mode=TwoWay}" Minimum="0" Maximum="1" Grid.Row="1" Grid.Column="3"/>			
+		</Grid>
+	</DataTemplate>
+
+
+	<DataTemplate x:Key="DirectionalBlurEffect">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>				
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Angle" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=angle, Path=Value}" Grid.Column="2"></TextBlock>
+			<Slider x:Name="angle" Value="{Binding Angle, Mode=TwoWay}" Minimum="0" Maximum="360" Grid.Row="0" Grid.Column="3"/>
+			
+			<TextBlock Text="Blur Amount" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=blurAmount, Path=Value}" Grid.Column="2" Grid.Row="1" ></TextBlock>
+			<Slider x:Name="blurAmount" Value="{Binding BlurAmount, Mode=TwoWay}"  Grid.Row="1"  Minimum="0" Grid.Column="3"
+                Maximum="1"  SmallChange="0.01" />
+		</Grid>
+	</DataTemplate>
+
+
+	<DataTemplate x:Key="EmbossedEffect">
+		<Grid>
+		
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>				 
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Amount" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=amount,Path=Value}" Grid.Row="0" Grid.Column="2"></TextBlock>
+			<Slider x:Name="amount" Value="{Binding Amount, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" Maximum="30"                
+                SmallChange="1"/>
+                
+			<TextBlock Text="Width" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=width, Path=Value}" Grid.Row="1" Grid.Column="2"></TextBlock>
+			<Slider x:Name="width" Value="{Binding Width, Mode=TwoWay}"  Grid.Row="1" Grid.Column="3"
+				Minimum="0"
+                Maximum="0.005"                
+                SmallChange="0.00001"
+			/>
+		</Grid>
+	</DataTemplate>
+
+	<DataTemplate x:Key="GloomEffect"> 
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Gloom Intensity" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=gloomIntensity, Path=Value}"  Grid.Column="2" /> 
+			<Slider x:Name="gloomIntensity" Value="{Binding GllomIntensity, Mode=TwoWay}" Grid.Row="0" Grid.Column="3"
+                Maximum="1"                
+                SmallChange=".1"/>
+                
+			<TextBlock Text="Base Intensity" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=baseIntensity, Path=Value}"  Grid.Row="1" Grid.Column="2" />
+			<Slider x:Name="baseIntensity" Value="{Binding BaseIntensity, Mode=TwoWay}"  Grid.Row="1"  Grid.Column="3"		
+				Minimum="0"
+                Maximum="1"                
+                SmallChange="0.1"
+			/>
+			<TextBlock Text="Gloom Saturation" Grid.Row="2" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=gloomSaturation, Path=Value}"  Grid.Row="2" Grid.Column="2" />
+			<Slider x:Name="gloomSaturation" Value="{Binding GloomSaturation, Mode=TwoWay}"  Grid.Row="2" Grid.Column="3"  		
+				Minimum="0"
+                Maximum="1"                
+                SmallChange="0.05"
+			/>
+			<TextBlock Text="Base Saturation" Grid.Row="3" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=baseSaturation, Path=Value}"  Grid.Row="3" Grid.Column="2" />
+			<Slider x:Name="baseSaturation" Value="{Binding BaseSaturation, Mode=TwoWay}"  Grid.Row="3" Grid.Column="7"
+				Minimum="0"
+                Maximum="1"                
+                SmallChange="0.05"
+			/>			
+		</Grid>				
+	</DataTemplate>
+	
+	<DataTemplate x:Key="GrowablePoissonDiskEffect">
+		<Grid>
+		<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+		
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Radius" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=radius,Path=Value}" Grid.Row="0" Grid.Column="2"></TextBlock>
+			<Slider x:Name="radius" Value="{Binding Radius, Mode=TwoWay}" Grid.Row="0" Grid.Column="3"
+                Maximum="1"                
+                SmallChange=".05"/>
+                
+			<TextBlock Text="Width" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=width,Path=Value}" Grid.Row="1" Grid.Column="2"></TextBlock>
+			<Slider x:Name="width" Value="{Binding Width, Mode=TwoWay}"  Grid.Row="1" Grid.Column="3" 		
+				Minimum="0"
+                Maximum="50"                
+                SmallChange="1"
+			/>
+			<TextBlock Text="Height" Grid.Row="2" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=height,Path=Value}" Grid.Row="2" Grid.Column="2"></TextBlock>
+			<Slider x:Name="height" Value="{Binding Height, Mode=TwoWay}"  Grid.Row="2" Grid.Column="3" 		
+				Minimum="0"
+                Maximum="50"                
+                SmallChange="0.5"
+			/>
+		</Grid>
+	</DataTemplate>
+
+	<DataTemplate x:Key="InvertColorEffect" >
+		<Grid>
+			<TextBlock Text="No parameters"></TextBlock>
+		</Grid>
+	</DataTemplate>
+	
+	<DataTemplate x:Key="LightStreakEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>					 
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Bright Threshold" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=brightThreshold,Path=Value}" Grid.Row="0" Grid.Column="2"></TextBlock>
+			<Slider x:Name="brightThreshold" Value="{Binding BrightThreshold, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" Minimum="0"
+                Maximum="1"                
+                SmallChange=".05"/>
+			<TextBlock Text="Scale" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=scale,Path=Value}" Grid.Row="1" Grid.Column="2"></TextBlock>
+			<Slider x:Name="scale" Value="{Binding Scale, Mode=TwoWay}"  Grid.Row="1" Grid.Column="3"  		
+				Minimum="0"
+                Maximum="4"                
+                SmallChange="0.1"
+			/>
+			<TextBlock Text="Attenuation" Grid.Row="2" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=attenuation,Path=Value}" Grid.Row="2" Grid.Column="2"></TextBlock>
+			<Slider x:Name="attenuation" Value="{Binding Attenuation, Mode=TwoWay}"  Grid.Row="2" Grid.Column="3"  		
+				Minimum="0"
+                Maximum="1"                
+                SmallChange="0.1"
+			/>
+		</Grid>
+	</DataTemplate>
+
+	<DataTemplate x:Key="MagnifyEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>				
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Radii" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBox Text="{Binding Radii, Mode=TwoWay}" Grid.Row="0" Grid.Column="2"/>
+
+
+			<TextBlock Text="Center" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBox Text="{Binding Center, Mode=TwoWay}" Grid.Row="1" Grid.Column="2"/>
+			
+			<TextBlock Text="Shrink Factor" Grid.Row="2" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=shrinkFactor,Path=Value}" Grid.Row="2" Grid.Column="2"></TextBlock>
+			<Slider x:Name="shrinkFactor" Value="{Binding ShrinkFactor, Mode=TwoWay}"  Grid.Row="2" Grid.Column="3"  		
+				Minimum="0"
+                Maximum="1"                
+                SmallChange="0.1"
+			/>			 
+		</Grid>
+	</DataTemplate>
+
+	<DataTemplate x:Key="MonochromeEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>			
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Filter Color" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBox Text="{Binding FilterColor, Mode=TwoWay}" Grid.Column="2" Grid.ColumnSpan="2"/> 			 
+		</Grid>
+	</DataTemplate>
+
+
+	<DataTemplate x:Key="PinchEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>		 				
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Radius" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=radius,Path=Value}" Grid.Row="0" Grid.Column="2"></TextBlock>
+			<Slider x:Name="radius" Value="{Binding Radius, Mode=TwoWay}" Grid.Row="0" Minimum="0" Grid.Column="3"
+                Maximum="1"                
+                SmallChange=".05"/>
+                
+			<TextBlock Text="Amount" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=amount,Path=Value}" Grid.Row="1" Grid.Column="2"></TextBlock>
+			<Slider x:Name="amount" Value="{Binding Amount, Mode=TwoWay}"  Grid.Row="1"  Grid.Column="3"
+				Minimum="0"
+                Maximum="10"                
+                SmallChange="0.5"
+			/>
+			
+			<TextBlock Text="CenterX" Grid.Row="2" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=centerX,Path=Value}" Grid.Row="2" Grid.Column="2"></TextBlock>
+			<Slider x:Name="centerX" Value="{Binding CenterX, Mode=TwoWay}"  Grid.Row="2" Grid.Column="3"  		
+				Minimum="0"
+                Maximum="1"                
+                SmallChange=".05"
+			/>
+			
+			<TextBlock Text="CenterY" Grid.Row="3" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=centerY,Path=Value}" Grid.Row="3" Grid.Column="2"></TextBlock>
+			<Slider x:Name="centerY" Value="{Binding CenterY, Mode=TwoWay}"  Grid.Row="3" Grid.Column="3" 		
+				Minimum="0"
+                Maximum="1"                
+                SmallChange=".05" 
+                /> 
+		</Grid>
+	</DataTemplate>
+
+
+
+	<DataTemplate x:Key="PixelateEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>				 
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Horizontal Pixels" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=horizontalPixelCounts,Path=Value}" Grid.Row="0" Grid.Column="2"></TextBlock>
+			<Slider x:Name="horizontalPixelCounts" Value="{Binding HorizontalPixelCounts, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" Minimum="0"
+                Maximum="800"                
+                SmallChange="40"/>
+
+			<TextBlock Text="Vertical Pixels" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=verticalPixelCounts,Path=Value}" Grid.Row="1" Grid.Column="2"></TextBlock>
+			<Slider x:Name="verticalPixelCounts" Value="{Binding VerticalPixelCounts, Mode=TwoWay}" Grid.Row="1" Grid.Column="3" Minimum="0"
+                Maximum="800"                
+                SmallChange="40"/>
+               			 
+                 
+		</Grid>
+	</DataTemplate>
+
+
+	<DataTemplate x:Key="RippleEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>				
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Amplitude" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=amplitude,Path=Value}" Grid.Row="0" Grid.Column="2"></TextBlock>
+			<Slider x:Name="amplitude" Value="{Binding Amplitude, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" Minimum="0"
+                Maximum="1"                
+                SmallChange="0.05"/>
+
+
+			<TextBlock Text="Frequency" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=frequency,Path=Value}" Grid.Row="1" Grid.Column="2"></TextBlock>
+			<Slider x:Name="frequency" Value="{Binding Frequency, Mode=TwoWay}" Grid.Row="1" Grid.Column="3" Minimum="0"
+                Maximum="100"                
+                SmallChange="5"/>
+
+	
+			<TextBlock Text="Phase" Grid.Row="2" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=phase,Path=Value}" Grid.Row="2" Grid.Column="2"></TextBlock>
+			<Slider x:Name="phase" Value="{Binding Phase, Mode=TwoWay}" Grid.Row="2" Grid.Column="3" Minimum="0" 
+                Maximum="10"                
+                SmallChange=".5"/>
+                
+             <TextBlock Text="Center" Grid.Row="3" Grid.Column="1"></TextBlock>
+			<TextBox Text="{Binding Path=Center, Mode=TwoWay}" Grid.Row="3" Grid.Column="2" />
+			 
+
+		</Grid>
+	</DataTemplate>
+
+
+	<DataTemplate x:Key="SharpenEffect" >
+		<Grid>
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+
+			
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>		
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Amount" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=amount, Path=Value}" Grid.Column="2" Grid.Row="0" /> 
+			<Slider x:Name="amount" Value="{Binding Amount, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" Minimum="0"
+                Maximum="100"                
+                SmallChange="5"/>
+
+			<TextBlock Text="Width" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=width, Path=Value}" Grid.Column="2" Grid.Row="1" />
+			<Slider x:Name="width" Value="{Binding Width, Mode=TwoWay}" Grid.Row="1" Grid.Column="3" Minimum="0"
+                Maximum="100"                
+                SmallChange="5"/>
+ 		</Grid>
+	</DataTemplate>
+
+
+	<DataTemplate x:Key="SmoothMagnifyEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>			
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Inner Radius" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=innerRadius, Path=Value}" Grid.Row="0" Grid.Column="2" /> 
+			<Slider x:Name="innerRadius" Value="{Binding InnerRadius, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" Minimum="0"
+                Maximum=".6"                
+                SmallChange=".01"/>
+
+			<TextBlock Text="Outer Radius" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=outerRadius, Path=Value}" Grid.Row="1" Grid.Column="2" />
+			<Slider x:Name="outerRadius" Value="{Binding OuterRadius, Mode=TwoWay}" Grid.Row="1" Grid.Column="3" Minimum="0"
+                Maximum="1.0"                
+                SmallChange="0.01"/>
+                
+           <TextBlock Text="Magnification" Grid.Row="2" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=magnification, Path=Value}" Grid.Row="2" Grid.Column="2" />
+			<Slider x:Name="magnification" Value="{Binding Magnification, Mode=TwoWay}" Grid.Row="2" Grid.Column="3" Minimum="0"
+                Maximum="10"                
+                SmallChange="0.5"/>
+
+			<TextBlock Text="Center" Grid.Row="3" Grid.Column="1"></TextBlock>
+			<TextBox Text="{Binding Path=Center, Mode=TwoWay}" Grid.Row="3" Grid.Column="2" />
+		</Grid>
+		
+	</DataTemplate>
+
+
+	<DataTemplate x:Key="SwirlEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Swirl Strength" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=swirlStrength,Path=Value}" Grid.Row="0" Grid.Column="2"></TextBlock>
+			<Slider x:Name="swirlStrength" Value="{Binding SwirlStrength, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" Minimum="-20"
+                Maximum="20"                
+                SmallChange="1"/>
+
+			<TextBlock Text="Angle Frequency" Grid.Row="1" Grid.Column="1"></TextBlock>			
+			<TextBox Text="{Binding AngleFrequency, Mode=TwoWay}" Grid.Row="1" Grid.Column="2" />
+
+			<TextBlock Text="Center" Grid.Row="2" Grid.Column="1"></TextBlock>
+			<TextBox Text="{Binding Center, Mode=TwoWay}" Grid.Row="2" Grid.Column="2" />
+
+		</Grid>		
+	</DataTemplate>
+
+	<DataTemplate x:Key="ToneMappingEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+			</Grid.RowDefinitions>
+
+
+			<TextBlock Text="Exposure" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=exposure, Path=Value}" Grid.Row="0" Grid.Column="2" />  
+			<Slider x:Name="exposure" Value="{Binding Exposure, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" Minimum="0"
+                Maximum="3"                
+                SmallChange=".05"/>
+
+			<TextBlock Text="Gamma" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=gamma, Path=Value}" Grid.Row="1" Grid.Column="2" />
+			<Slider x:Name="gamma" Value="{Binding Gamma, Mode=TwoWay}" Grid.Row="1" Grid.Column="3" Minimum="0"
+                Maximum="1"                
+                SmallChange="0.05"/>
+
+
+
+			<TextBlock Text="Defog" Grid.Row="2" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=defog, Path=Value}" Grid.Row="2" Grid.Column="2" />
+			<Slider x:Name="defog" Value="{Binding Defog, Mode=TwoWay}" Grid.Row="2" Grid.Column="3" Minimum="0"
+                Maximum="1"                
+                SmallChange="0.05"/>
+
+			<TextBlock Text="Fog Color" Grid.Row="3" Grid.Column="1" />
+			<TextBox Text="{Binding FogColor, Mode=TwoWay}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"/>
+
+
+			<TextBlock Text="Vignette Radius" Grid.Row="4" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=vignetteRadius, Path=Value}" Grid.Row="4" Grid.Column="2" />
+			<Slider x:Name="vignetteRadius" Value="{Binding VignettteRadius, Mode=TwoWay}" Grid.Row="4" Grid.Column="3" Minimum="0"
+                Maximum="1"                
+                SmallChange="0.05"/>
+
+			<TextBlock Text="Vignette Center" Grid.Row="5" Grid.Column="1" />
+			<TextBox Text="{Binding Center}" Grid.Row="5" Grid.Column="2"/>
+
+
+			<TextBlock Text="Blue Shift" Grid.Row="6" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=blueshift, Path=Value}" Grid.Row="6" Grid.Column="2" />
+			<Slider x:Name="blueshift" Value="{Binding BlueShift, Mode=TwoWay}" Grid.Row="6" Grid.Column="3" Minimum="0"
+                Maximum="1"                
+                SmallChange=".05"/>
+                             
+		</Grid>
+	</DataTemplate>
+
+	<DataTemplate x:Key="ToonShaderEffect" >
+		<Grid>
+			<TextBlock Text="No parameters"></TextBlock>
+		</Grid>
+	</DataTemplate>
+
+
+	<DataTemplate x:Key="ZoomBlurEffect" >
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{StaticResource marginLeft}" />
+				<ColumnDefinition Width="{StaticResource propertyWidth}" />
+				<ColumnDefinition Width="{StaticResource valueWidth}" />
+				<ColumnDefinition Width="{StaticResource valueSliderWidth}" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+		
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="Blur Amount" Grid.Row="0" Grid.Column="1"></TextBlock>
+			<TextBlock Text="{Binding ElementName=blurAmount, Path=Value}" Grid.Row="0" Grid.Column="2" /> 
+			<Slider x:Name="blurAmount" Value="{Binding BlurAmount, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" Minimum="0"
+                Maximum="10"                
+                SmallChange=".1"/>              
+                
+			<TextBlock Text="Center" Grid.Row="1" Grid.Column="1"></TextBlock>
+			<TextBox Text="{Binding Center, Mode=TwoWay}" Grid.Row="1" Grid.Column="2" /> 			
+		</Grid>
+	</DataTemplate>
+	
+	
+	
+
+</ResourceDictionary>

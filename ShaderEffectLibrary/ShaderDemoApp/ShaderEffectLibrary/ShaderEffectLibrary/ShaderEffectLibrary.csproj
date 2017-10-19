@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="ShaderBuildTask.PixelShaderCompile" AssemblyName="ShaderBuildTask, Version=1.0.3072.18169, Culture=neutral, PublicKeyToken=44e467d1687af125" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{967D61A9-C8F0-4C2A-A784-6CDA648ECB19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShaderEffectLibrary</RootNamespace>
+    <AssemblyName>ShaderEffectLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EffectFiles\BandedSwirlEffect.cs" />
+    <Compile Include="EffectFiles\BloomEffect.cs" />
+    <Compile Include="EffectFiles\BrightExtractEffect.cs" />
+    <Compile Include="EffectFiles\ColorKeyAlphaEffect.cs" />
+    <Compile Include="EffectFiles\ColorToneEffect.cs" />
+    <Compile Include="EffectFiles\ContrastAdjustEffect.cs" />
+    <Compile Include="EffectFiles\DirectionalBlurEffect.cs" />
+    <Compile Include="EffectFiles\EmbossedEffect.cs" />
+    <Compile Include="EffectFiles\GloomEffect.cs" />
+    <Compile Include="EffectFiles\GrowablePoissonDiskEffect.cs" />
+    <Compile Include="EffectFiles\InvertColorEffect.cs" />
+    <Compile Include="EffectFiles\LightStreakEffect.cs" />
+    <Compile Include="EffectFiles\MagnifyEffect.cs" />
+    <Compile Include="EffectFiles\MonochromeEffect.cs" />
+    <Compile Include="EffectFiles\PinchEffect.cs" />
+    <Compile Include="EffectFiles\PixelateEffect.cs" />
+    <Compile Include="EffectFiles\RippleEffect.cs" />
+    <Compile Include="EffectFiles\SharpenEffect.cs" />
+    <Compile Include="EffectFiles\SmoothMagnifyEffect.cs" />
+    <Compile Include="EffectFiles\SwirlEffect.cs" />
+    <Compile Include="EffectFiles\ToneMappingEffect.cs" />
+    <Compile Include="EffectFiles\ToonShaderEffect.cs" />
+    <Compile Include="EffectFiles\ZoomBlurEffect.cs" />
+    <Compile Include="EffectLibrary.cs">
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+    <Effect Include="ShaderSource\ToonShader.fx" />
+    <Effect Include="ShaderSource\BandedSwirl.fx" />
+    <Effect Include="ShaderSource\Bloom.fx" />
+    <Effect Include="ShaderSource\BrightExtract.fx" />
+    <Effect Include="ShaderSource\ColorKeyAlpha.fx" />
+    <Effect Include="ShaderSource\ColorTone.fx" />
+    <Effect Include="ShaderSource\ContrastAdjust.fx" />
+    <Effect Include="ShaderSource\DirectionalBlur.fx" />
+    <Effect Include="ShaderSource\Embossed.fx" />
+    <Effect Include="ShaderSource\Gloom.fx" />
+    <Effect Include="ShaderSource\GrowablePoissonDisk.fx" />
+    <Effect Include="ShaderSource\InvertColor.fx" />
+    <Effect Include="ShaderSource\LightStreak.fx" />
+    <Effect Include="ShaderSource\Magnify.fx" />
+    <Effect Include="ShaderSource\Monochrome.fx" />
+    <Effect Include="ShaderSource\Pinch.fx" />
+    <Effect Include="ShaderSource\Pixelate.fx" />
+    <Effect Include="ShaderSource\Ripple.fx" />
+    <Effect Include="ShaderSource\Sharpen.fx" />
+    <Effect Include="ShaderSource\SmoothMagnify.fx" />
+    <Effect Include="ShaderSource\Swirl.fx" />
+    <Effect Include="ShaderSource\ToneMapping.fx" />
+    <Effect Include="ShaderSource\ZoomBlur.fx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EffectCompile" Condition="'@(Effect)' != '' ">
+    <PixelShaderCompile Sources="@(Effect)">
+      <Output TaskParameter="Outputs" ItemName="Resource" />
+    </PixelShaderCompile>
+  </Target>
+  <PropertyGroup>
+    <!-- Add effect compilation to the PrepareResourcesDependsOn so that the effect fx  get compiled before resources are collected -->
+    <PrepareResourcesDependsOn>EffectCompile;$(PrepareResourcesDependsOn)</PrepareResourcesDependsOn>
+  </PropertyGroup>
+</Project>

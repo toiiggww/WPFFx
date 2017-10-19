@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFDemoApp", "..\WPF\Demo_wpf\WPFDemoApp.csproj", "{1E53BE4C-D5A3-4572-8780-FAFEE0619D7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFShaderEffectLibrary", "..\WPF\ShaderEffectLibrary\WPFShaderEffectLibrary.csproj", "{967D61A9-C8F0-4C2A-A784-6CDA648ECB19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTransitionEffects", "..\WPF\TransitionEffects\WPFTransitionEffects.csproj", "{9FEDF2F2-D59E-4797-A5AE-13A25E679F6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLEffectHarness", "..\SL\Demo_silverlight\SLEffectHarness\SLEffectHarness.csproj", "{D8AEA392-A238-4483-8BA1-D2777824E14F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLEffectHarness.Web", "..\SL\Demo_silverlight\SLEffectHarness.Web\SLEffectHarness.Web.csproj", "{07586428-4E14-4E01-901D-AC48436346AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLShaderEffectLibrary", "..\SL\SLShaderEffectLibrary\SLShaderEffectLibrary.csproj", "{C9A87706-BDD5-4596-9B4D-59EEA4BA6407}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLTransitionEffects", "..\SL\SLTransitionEffects\SLTransitionEffects.csproj", "{0C8D967A-FF1B-4F1D-95E9-9203D6D04783}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 8
+		SccProjectName0 = \u0022$/HLSLMeetsXaml.root/HLSLMeetsXaml\u0022,\u0020POAAAAAA
+		SccLocalPath0 = ..
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectFilePathRelativizedFromConnection0 = MainSolution\\
+		SccProjectUniqueName1 = ..\\SL\\Demo_silverlight\\SLEffectHarness.Web\\SLEffectHarness.Web.csproj
+		SccLocalPath1 = ..
+		SccProjectFilePathRelativizedFromConnection1 = SL\\Demo_silverlight\\SLEffectHarness.Web\\
+		SccProjectUniqueName2 = ..\\SL\\Demo_silverlight\\SLEffectHarness\\SLEffectHarness.csproj
+		SccLocalPath2 = ..
+		SccProjectFilePathRelativizedFromConnection2 = SL\\Demo_silverlight\\SLEffectHarness\\
+		SccProjectUniqueName3 = ..\\SL\\SLShaderEffectLibrary\\SLShaderEffectLibrary.csproj
+		SccLocalPath3 = ..
+		SccProjectFilePathRelativizedFromConnection3 = SL\\SLShaderEffectLibrary\\
+		SccProjectUniqueName4 = ..\\SL\\SLTransitionEffects\\SLTransitionEffects.csproj
+		SccLocalPath4 = ..
+		SccProjectFilePathRelativizedFromConnection4 = SL\\SLTransitionEffects\\
+		SccProjectUniqueName5 = ..\\WPF\\Demo_wpf\\WPFDemoApp.csproj
+		SccLocalPath5 = ..
+		SccProjectFilePathRelativizedFromConnection5 = WPF\\Demo_wpf\\
+		SccProjectUniqueName6 = ..\\WPF\\ShaderEffectLibrary\\WPFShaderEffectLibrary.csproj
+		SccLocalPath6 = ..
+		SccProjectFilePathRelativizedFromConnection6 = WPF\\ShaderEffectLibrary\\
+		SccProjectUniqueName7 = ..\\WPF\\TransitionEffects\\WPFTransitionEffects.csproj
+		SccLocalPath7 = ..
+		SccProjectFilePathRelativizedFromConnection7 = WPF\\TransitionEffects\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E53BE4C-D5A3-4572-8780-FAFEE0619D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E53BE4C-D5A3-4572-8780-FAFEE0619D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E53BE4C-D5A3-4572-8780-FAFEE0619D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E53BE4C-D5A3-4572-8780-FAFEE0619D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{967D61A9-C8F0-4C2A-A784-6CDA648ECB19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{967D61A9-C8F0-4C2A-A784-6CDA648ECB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{967D61A9-C8F0-4C2A-A784-6CDA648ECB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{967D61A9-C8F0-4C2A-A784-6CDA648ECB19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FEDF2F2-D59E-4797-A5AE-13A25E679F6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FEDF2F2-D59E-4797-A5AE-13A25E679F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FEDF2F2-D59E-4797-A5AE-13A25E679F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FEDF2F2-D59E-4797-A5AE-13A25E679F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8AEA392-A238-4483-8BA1-D2777824E14F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8AEA392-A238-4483-8BA1-D2777824E14F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8AEA392-A238-4483-8BA1-D2777824E14F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8AEA392-A238-4483-8BA1-D2777824E14F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07586428-4E14-4E01-901D-AC48436346AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07586428-4E14-4E01-901D-AC48436346AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07586428-4E14-4E01-901D-AC48436346AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07586428-4E14-4E01-901D-AC48436346AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A87706-BDD5-4596-9B4D-59EEA4BA6407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A87706-BDD5-4596-9B4D-59EEA4BA6407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A87706-BDD5-4596-9B4D-59EEA4BA6407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A87706-BDD5-4596-9B4D-59EEA4BA6407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C8D967A-FF1B-4F1D-95E9-9203D6D04783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C8D967A-FF1B-4F1D-95E9-9203D6D04783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C8D967A-FF1B-4F1D-95E9-9203D6D04783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C8D967A-FF1B-4F1D-95E9-9203D6D04783}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
